@@ -2,35 +2,37 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const palabrasEjemplo = [
-  {
-    palabra: "HOLA",
-    descripcion: "Un saludo común para decir hola."
-  },
-  {
-    palabra: "MUNDO",
-    descripcion: "El planeta en el que vivimos, lleno de tierra y agua."
-  },
-  {
-    palabra: "JAVASCRIPT",
-    descripcion: "Un lenguaje de programación popular para construir sitios web interactivos y dar comportamiento a las aplicaciones."
-  },
-  {
-    palabra: "REACT",
-    descripcion: "Una biblioteca de Javascript en la que hemos escrito este código del proyecto"
-  },
-  {
-    palabra: "PROGRAMACION",
-    descripcion: "El proceso de desarrollar código para ayudar a las computadoras a realizar tareas."
-  },
-  {
-    palabra: "INFORMATICA",
-    descripcion: "La ciencia que estudia el procesamiento automático de información mediante computadoras."
-  }, 
-  {
-    palabra: "HTML",
-    descripcion: "El lenguaje de marcado de hipertexto utilizado para crear la estructura y el contenido de las páginas web."
-  }
+
+  { palabra: "NETBEANS", descripcion: "Un entorno de desarrollo integrado popular para desarrollo en Java." },
+  { palabra: "ECLIPSE", descripcion: "Un entorno de desarrollo integrado popular para desarrollo en Java." },
+  { palabra: "JAVASCRIPT", descripcion: "Un lenguaje de programación popular para construir sitios web interactivos y dar comportamiento a las aplicaciones." },
+  { palabra: "REACT", descripcion: "Una biblioteca de Javascript utilizada para construir interfaces de usuario interactivas." },
+  { palabra: "PROGRAMACION", descripcion: "El proceso de desarrollar código para ayudar a las computadoras a realizar tareas." },
+  { palabra: "INFORMATICA", descripcion: "La ciencia que estudia el procesamiento automático de información mediante computadoras." },
+  { palabra: "HTML", descripcion: "El lenguaje de marcado de hipertexto utilizado para crear la estructura y el contenido de las páginas web." },
+  { palabra: "NODEJS", descripcion: "Un entorno de ejecución de JavaScript del lado del servidor basado en el motor V8 de Chrome." },
+  { palabra: "VSCODE", descripcion: "Un editor de código fuente desarrollado por Microsoft con soporte para múltiples lenguajes." },
+  { palabra: "PYTHON", descripcion: "Un lenguaje de programación versátil y fácil de aprender, ampliamente utilizado en ciencia de datos y desarrollo web." },
+  { palabra: "JAVA", descripcion: "Un lenguaje de programación popular para aplicaciones empresariales, móviles y de escritorio." },
+  { palabra: "MYSQL", descripcion: "Un sistema de gestión de bases de datos relacional de código abierto." },
+  { palabra: "MONGODB", descripcion: "Una base de datos NoSQL orientada a documentos, utilizada en aplicaciones escalables." },
+  { palabra: "GITHUB", descripcion: "Una plataforma basada en Git para alojamiento de código y colaboración entre desarrolladores." },
+  { palabra: "APACHE", descripcion: "Un servidor web de código abierto ampliamente utilizado en la web." },
+  { palabra: "DOCKER", descripcion: "Una plataforma para la creación, despliegue y ejecución de aplicaciones en contenedores." },
+  { palabra: "LINUX", descripcion: "Un sistema operativo de código abierto basado en Unix, ampliamente utilizado en servidores." },
+  { palabra: "UBUNTU", descripcion: "Una distribución de Linux popular por su facilidad de uso y soporte de comunidad." },
+  { palabra: "WINDOWS", descripcion: "Un sistema operativo desarrollado por Microsoft, ampliamente utilizado en computadoras personales." },
+  { palabra: "MACOS", descripcion: "El sistema operativo desarrollado por Apple para sus computadoras Mac." },
+  { palabra: "JSON", descripcion: "Un formato ligero de intercambio de datos basado en texto y fácil de leer para humanos y máquinas." },
+  { palabra: "AJAX", descripcion: "Una técnica de desarrollo web para actualizar contenido sin recargar la página." },
+  { palabra: "REST", descripcion: "Un estilo de arquitectura para el diseño de servicios web basado en recursos." },
+  { palabra: "ANGULAR", descripcion: "Un framework de desarrollo web basado en TypeScript, desarrollado por Google." },
+  { palabra: "TYPESCRIPT", descripcion: "Un superconjunto de JavaScript que agrega tipado estático y características avanzadas." },
+  { palabra: "BABEL", descripcion: "Un compilador de JavaScript que convierte código moderno en versiones compatibles con navegadores antiguos." },
+  { palabra: "BOOTSTRAP", descripcion: "Un framework de CSS para crear sitios web responsivos y modernos." },
+  { palabra: "JQUERY", descripcion: "Una biblioteca de JavaScript diseñada para simplificar la manipulación del DOM y eventos." },
 ];
+
 
 const obtenerPalabraAleatoria = () => {
   const posicionAleatoria = Math.floor(Math.random() * palabrasEjemplo.length);
@@ -48,10 +50,12 @@ function App() {
 
   useEffect(() => {
     if (intentosFallidos >= 3) {
-      window.alert("¡Juego terminado! Has hecho demasiados intentos incorrectos.");
+      window.alert(`¡Juego terminado! Has fallado tres veces. La palabra era: ${datosPalabra.palabra}`);
       funcionReiniciarJuego();
+    } else if (intentosFallidos > 0) {
+      3 - intentosFallidos
     }
-  }, [intentosFallidos]);
+  }, [intentosFallidos, datosPalabra.palabra]);
 
   useEffect(() => {
     if (letrasElegidas.length > 0 && funcionComprobarPalabraAdivinada()) {
