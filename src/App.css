@@ -110,9 +110,11 @@ h1 {
 .seleccion-letras {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
-  gap: 10px;
+  gap: 14px;
   width: 100%;
   padding: 20px;
+  grid-template-columns: repeat(10, 1fr);
+  max-width: 90vw;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
