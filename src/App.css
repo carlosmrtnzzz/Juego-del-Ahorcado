@@ -1,19 +1,26 @@
+/* Estilos para el contenedor principal y estructura de la página */
 html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.pagina-contenedor {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
 .contenedor {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   padding: 20px;
-  padding-bottom: 1%;
-  font-family: 'Segoe UI', system-ui, sans-serif;
   position: relative;
 }
 
@@ -26,12 +33,14 @@ h1 {
   letter-spacing: 2px;
 }
 
+/* Estilos para el contenedor de palabra */
 .contenedor-palabra {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .letra {
@@ -56,6 +65,7 @@ h1 {
   box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
 }
 
+/* Estilos para botones y secciones */
 .seccion-botones {
   display: flex;
   flex-direction: column;
@@ -144,6 +154,8 @@ h1 {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .boton-pista {
@@ -215,15 +227,22 @@ h1 {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   border-left: 4px solid #e94560;
+  max-width: 800px;
+  text-align: center;
 }
 
+/* Estilos para el footer - arreglado */
 footer {
   width: 100%;
   background: rgb(0, 0, 0);
   padding: 15px 0;
-  margin-top: auto;
   border-top: 2px solid rgba(233, 69, 96, 0.3);
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 footer p {
@@ -235,10 +254,63 @@ footer p {
   margin: 0;
 }
 
+.Btn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(31, 31, 31);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.svgIcon {
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.text {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: .4s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Btn:hover {
+  width: 110px;
+  transition-duration: .4s;
+  border-radius: 30px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.Btn:hover .svgIcon {
+  opacity: 0;
+  transition-duration: .3s;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .contenedor {
     padding: 15px;
-    padding-bottom: 80px;
   }
 
   .seccion-botones {
@@ -255,11 +327,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  .contenedor {
-    padding: 15px;
-    padding-bottom: 80px;
-  }
-
   h1 {
     font-size: 32px;
     text-align: center;
