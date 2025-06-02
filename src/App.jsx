@@ -155,7 +155,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <p>Desarrollado por Lautaro y Carlos &copy; </p>
+        <p>Desarrollado por Carlos Martínez Jiménez &copy; </p>
         <a
           href="https://github.com/carlosmrtnzzz/Juego-del-Ahorcado"
           target="_blank"
