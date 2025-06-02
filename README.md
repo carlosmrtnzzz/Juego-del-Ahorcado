@@ -1,5 +1,5 @@
-# Ahorcado por Lautaro y Carlos
+# Ahorcado por Carlos Martínez Jiménez
 
-https://ahorcadolauxcarlos.netlify.app/
+https://ahorcadoreactcarlos.netlify.app/
 
 ![QR PARA LA WEB](QR.png)
