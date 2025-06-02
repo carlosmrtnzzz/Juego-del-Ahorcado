@@ -4,4 +4,4 @@ Hecho con react.
 
 https://ahorcadoreactcarlos.netlify.app/
 
-![QR PARA LA WEB](QR.png)
+![QR PARA LA WEB](newQR.png)
